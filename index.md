@@ -1,8 +1,8 @@
 # Kraft Workout Tracker — Privacy Policy
 
 **Effective date:** 12 June 2026
-**Developer / data controller:** Odin Skjærvik, Norway
-**Contact:** odinskjaervik@gmail.com
+**Data controller:** Kraft is operated by Odin Skjærvik, Norway
+**Contact:** support@kraftlift.com
 
 Kraft is built local-first: your training data lives on your phone, and the app works fully without an account. This policy explains exactly what data Kraft handles, what is optional, and what we never do.
 
@@ -74,7 +74,7 @@ Our processing of personal data is based on the following legal bases under the 
 {: #delete-your-account-and-data}
 
 - **In the app:** Settings → Account → **Delete account**. This permanently removes your account data, sync rows and stored backups from our systems.
-- **By e-mail:** send a deletion request to **odinskjaervik@gmail.com** from any address — you do not need the app installed. We will delete the data associated with your account and confirm.
+- **By e-mail:** send a deletion request to **support@kraftlift.com** from any address — you do not need the app installed. We will delete the data associated with your account and confirm.
 - **On-device data** can be deleted anytime via Settings → "Clear all data", or by uninstalling the app.
 
 ## 9. Your rights
@@ -83,7 +83,7 @@ Under the GDPR you have the right to: access your personal data and obtain a cop
 
 **Right to object.** Where we process data based on legitimate interest (security logs, section 3), you have the right to object at any time on grounds relating to your particular situation (Art. 21 GDPR) by contacting us at the address above.
 
-To exercise any of these rights, contact odinskjaervik@gmail.com. You also have the right to complain to a supervisory authority — in Norway, **Datatilsynet** (www.datatilsynet.no).
+To exercise any of these rights, contact support@kraftlift.com. You also have the right to complain to a supervisory authority — in Norway, **Datatilsynet** (www.datatilsynet.no).
 
 ## 10. Children
 
