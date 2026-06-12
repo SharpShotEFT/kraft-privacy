@@ -71,6 +71,7 @@ Our processing of personal data is based on the following legal bases under the 
 - **Server logs** are deleted on a short rolling schedule.
 
 ## 8. Delete your account and data
+{: #delete-your-account-and-data}
 
 - **In the app:** Settings → Account → **Delete account**. This permanently removes your account data, sync rows and stored backups from our systems.
 - **By e-mail:** send a deletion request to **odinskjaervik@gmail.com** from any address — you do not need the app installed. We will delete the data associated with your account and confirm.
