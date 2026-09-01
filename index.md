@@ -1,6 +1,6 @@
 # Kraft Workout Tracker — Privacy Policy
 
-**Effective date:** 12 June 2026
+**Effective date:** 1 September 2026
 **Data controller:** Kraft is operated by Odin Skjærvik, Norway
 **Contact:** support@kraftlift.com
 
