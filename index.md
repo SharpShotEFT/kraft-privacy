@@ -1,83 +1,115 @@
+---
+layout: default
+title: "Kraft Workout Tracker — Privacy Policy"
+permalink: /
+---
+
 # Kraft Workout Tracker — Privacy Policy
 
-**Effective date:** 1 September 2026
-**Data controller:** Kraft is operated by Odin Skjærvik, Norway
+[Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
+
+**Effective date:** 5 September 2026
+
+**Data controller:** Odin Skjærvik, Norway
+
 **Contact:** support@kraftlift.com
 
-Kraft is built local-first: local workout tracking works without an account, while Google sign-in is required for paid-upgrade verification and Pro cloud features. This policy explains exactly what data Kraft handles, what is optional, and what we never do.
+This policy covers Kraft's available Android app and describes the iOS 1.3 release being prepared. Apple-specific features below apply when using a version that offers them; this policy does not announce iOS availability. Features and sign-in options can differ by installed version and platform.
 
-## The short version
+Kraft is local-first. You can record workouts without an account. Signing in is needed for paid-upgrade verification and optional cloud features; signing in alone does not enable workout sync or upload a training backup.
 
-- Your workouts are stored **on your device**. By default, nothing is uploaded anywhere.
-- Kraft shows **no ads**, contains **no third-party advertising or tracking SDKs**, and **never sells your data**.
-- Local workout tracking works without an account. Google sign-in is required to verify paid upgrades and to use Pro cloud features.
-- Cloud features (account, online backup, multi-device sync) are **optional** and hosted in the **EU**.
+## Your device and exports
 
-## 1. Data stored on your device
+Kraft stores exercises, routines, workout sets, dates, notes, personal records, body measurements and settings in its local database. Measurements can include weight, body fat and circumferences. Some training/body information may reveal health information.
 
-Everything you record in Kraft — workouts, sets, exercises, routines, body measurements, personal records, settings, and your membership tier — is stored in a local database on your phone. This data does not leave your device unless you enable the optional cloud features described in section 3 or export it yourself (CSV/backup files you create are readable, unencrypted files saved where you choose and are under your control).
+Rest alerts are scheduled locally, without uploading your workout schedule to a push-notification server. This release does not use HealthKit or read Apple Health data.
 
-Rest-timer notifications are scheduled locally on your device. Kraft does not use push notifications and has no notification server.
+CSV and local backup files you export are not encrypted by Kraft. Your chosen Files/share destination handles its copy under its own rules. Those copies are separate from account deletion.
 
-When you choose to export a CSV or local backup, Android may pass that file to the app or destination you select in the system share sheet. Kraft does not control the recipient or what it does with a file you choose to share.
+Kraft's iOS database is configured to be excluded from automatic operating-system backups. Keep your own deliberate export or encrypted online backup for recovery. This does not control files you export to another app/provider.
 
-## 2. Purchases
+## Accounts and sign-in
 
-Upgrades (Kraft Basic, Kraft Pro) are processed by **Google Play Billing**. Google processes your payment and does not provide us with payment details such as card numbers. To verify a paid upgrade, Kraft sends the Google Play purchase token to our authenticated verification service. Supabase stores the product, entitlement state, acknowledgement state, subscription expiry when applicable, verification timestamps, and one-way hashes of purchase tokens. These records are used only to verify and maintain your Kraft entitlement; the purchase token itself is not stored by Kraft. Google's handling of your payment data is described in [Google Play's Terms of Service](https://play.google.com/about/play-terms/) and [Google's Privacy Policy](https://policies.google.com/privacy).
+Kraft and Supabase process your internal account ID, provider identifiers, email and available profile details to authenticate and operate your account. Google may supply a name or profile-image reference. Native Apple sign-in requests email, not full name; Apple may provide a private relay email.
 
-## 3. Account, online backup and sync (optional cloud features)
+Apple and Google operate their sign-in services under their policies. Kraft receives authentication assertions, not your provider password. Supabase session credentials are saved on your device to keep you signed in.
 
-If you sign in to Kraft (optional for local-only use, but required for paid-upgrade verification and Pro cloud features), the following applies:
+The backend exchanges Apple's short-lived code and keeps an encrypted Apple refresh credential to revoke Kraft's authorization during account deletion. Durable grant storage does not retain the authorization code, raw nonce or identity token. This credential is separate from your Supabase session and backup recovery key.
 
-- **Account data.** Your e-mail address, internal user ID, and the basic Google profile fields made available during Google sign-in (such as display name and profile-image reference, where provided). This is used solely to operate your account and verify purchases.
-- **Online backup.** Backup files are **encrypted on your device before upload** and stored in the EU. The encryption key is never stored on our servers, and we have no mechanism to decrypt your stored backups in normal operation. Because signing in necessarily passes your credentials to our authentication service, this is strong application-level encryption rather than a formal zero-knowledge guarantee.
-- **Multi-device sync.** If you enable sync, your training data (the same records described in section 1) is stored in our EU database so your devices can stay in step. Sync data is encrypted in transit and at rest and is isolated per account through database-level access rules; unlike backups, it is not end-to-end encrypted, because the server must read rows to merge changes between devices.
-- **Hosting.** Cloud features run on **Supabase** (project hosted in Stockholm, Sweden, EU), acting as our data processor under a GDPR Data Processing Addendum. Supabase runs on infrastructure sub-processors (AWS, Stockholm region) under equivalent data-protection obligations; any support access from outside the EEA is covered by Standard Contractual Clauses in the processor agreement.
-  - **Server logs.** When you use cloud features, our servers record short-lived technical logs, including your IP address (which may indicate approximate location), for security and abuse prevention; these are deleted on a rolling schedule.
+Continue using your existing Kraft account to keep its data/purchases together. You can deliberately connect another provider from that account. Supabase may associate identities under its verified-email provider policy; Kraft does not merge two separate accounts or transfer purchases just because you enter matching emails. An Apple relay address may create a different account. Credentials already linked to another Kraft account cannot simply be moved by the app.
 
-Enabling backup or sync is an explicit choice you make in the app. To the extent your body measurements and training records reveal information about your health, we process them in the cloud only with your explicit consent (Art. 9(2)(a) GDPR), which you give when you enable backup or sync and can withdraw at any time by disabling those features.
+## Purchases
 
-## 4. What we never do
+Apple App Store or Google Play processes payments; Kraft does not receive your card number. Account-linked evidence validates Basic/Pro, supports restoration and prevents unauthorized sharing across Android/iOS.
 
-- No advertising, no ad SDKs, no behavioural tracking, no analytics SDKs.
-- No sale of personal data, ever.
-- No sharing of your data with third parties beyond the processors named in this policy (Google Play for purchases, Supabase for cloud hosting), except when you explicitly choose to share an exported CSV or backup file through Android's share sheet. Those selected recipients process the file under their own policies. Google Play and Supabase process data only on our instructions or as independent controller for payments.
+The verification service processes product and transaction identifiers, store environment, renewal/expiry/refund status and verification times. It stores necessary entitlement/ownership records. Google purchase tokens are bound by one-way hashes and, after successful verification for cross-device refresh, stored as encrypted server-only credentials. This server-side Google handling can apply to existing Android installations when they verify a purchase; it is not limited to the future iOS release. Apple purchases use a server-issued account token and verified transaction identifiers in versions offering Apple billing.
 
-## 5. Legal bases (GDPR)
+Credential encryption keys are held separately on the server; this is not end-to-end encryption. The same Kraft account can use verified access on either platform. Local cached proof is account-scoped/time-limited, not a transferable receipt. Apple/Google may retain their payment records after Kraft account deletion.
 
-Our processing of personal data is based on the following legal bases under the GDPR:
+## Optional backup and sync
 
-| Processing | Legal basis |
-|---|---|
-| Operating optional account, backup and sync | Performance of a contract (Art. 6(1)(b)); explicit consent (Art. 9(2)(a)) to the extent the data reveals health information |
-| Processing purchases via Google Play | Performance of a contract (Art. 6(1)(b)) |
-| Security/server logs for cloud features | Legitimate interest (Art. 6(1)(f)) — keeping the service secure |
+**Online backup:** each upload requires separate confirmation for the displayed Kraft account, describing the training/body snapshot. A successful upload replaces that account's previous backup; it does not turn on automatic backup. Kraft encrypts the snapshot on your device with AES-256-GCM before uploading it to Supabase. The normal service stores ciphertext, not your recovery key. Save the recovery code privately: support cannot reconstruct a lost code or decrypt a backup without its key.
 
-## 6. Retention and deletion
+The key is account-scoped in protected device credential storage. Ordinary sign-out or provider revocation intentionally retains it. Device changes and OS keychain behavior can affect availability; do not rely on uninstall/reinstall for recovery or guaranteed secure key erasure.
 
-- **On-device data** is yours: delete it in the app ("Clear all data") or by uninstalling.
-- **Cloud data** (account, purchase-entitlement metadata, backups, and sync rows) is kept while your account exists and deleted when you delete your account. Residual copies may persist for a limited period in our hosting provider's encrypted database backups and expire automatically on its rolling retention schedule.
-- **Server logs** are deleted on a short rolling schedule.
+**Sync:** enabling multi-device sync is a separate, account-scoped choice. Completed workouts/sets, routines, exercise details, notes, personal records and body measurements go to Supabase to merge changes. An unfinished workout stays on its device until completed. Sync is encrypted in transit and at rest and has account-access protection, but is not end-to-end encrypted: the service can read its rows. Enabling sync does not create an encrypted backup.
 
-## 7. Delete your account and data
+**Consent/withdrawal:** decline an upload and keep using local tracking. Approval authorizes that upload, not automatic future backup or sync. To stop future backups, do not upload again; turn sync off in Account to stop future sync from that device. Signing out turns sync off and requires fresh enablement after signing in. Signing out or disabling sync does not delete existing cloud data. Use Account → Delete account or contact support@kraftlift.com for cloud-data deletion. Withdrawal does not make prior lawful processing unlawful.
+
+## Providers and locations
+
+- **Supabase:** authentication, entitlements, encrypted backup files, optional sync and backend security. Primary project storage is Stockholm, Sweden; platform logs, support and subprocessors may process data outside the EEA. An EU storage region does not make every operation EU-only.
+- **Cloudflare:** Apple purchase verification/notifications, processing account-token and transaction identifiers, signed subscription evidence and technical request information. Its global infrastructure may process this outside the EEA. Kraft does not send training/body records or backup recovery keys to that verifier.
+- **Apple/Google:** the sign-in/store service you use, under its applicable terms/privacy rules.
+- **Support email:** a monitored Gmail mailbox handles information you voluntarily send to answer a request and verify account access. Google processes that correspondence under its applicable service/privacy terms. Do not send passwords, recovery codes, sign-in credentials or full sensitive training exports.
+
+Applicable processor agreements and transfer safeguards govern provider processing. Contact us for information about safeguards relevant to your data. See [Supabase DPA](https://supabase.com/legal/customer-resources/data-processing-addendum), [Cloudflare DPA](https://www.cloudflare.com/cloudflare-customer-dpa/), [Apple Privacy](https://www.apple.com/legal/privacy/) and [Google Privacy](https://policies.google.com/privacy).
+
+## SDKs, technical information and advertising
+
+Kraft has no ads, does not sell personal information and does not use training/body records for advertising. It does not intentionally perform cross-app advertising tracking.
+
+Providers may process identifiers, IP/network information and service-usage/security data. Google's packaged iOS sign-in SDK declares linked name, email, phone, approximate location, user/device identifiers, other usage and other data, with functionality/analytics purposes depending on the category. This does not mean Kraft asks you for every field or reads precise GPS; it identifies provider practices that also matter. [Google sign-in disclosure](https://developers.google.com/identity/sign-in/ios/app-privacy).
+
+Sentry's library is included but is not configured to send crash reports in this release. Future activation requires updated disclosures and working controls. Kraft does not claim every packaged SDK is analytics-free.
+
+Technical logs and minimal operational records support security, reliability, verification and deletion completion. Application code avoids logging recovery keys, raw purchase credentials, signed purchase payloads or training records.
+
+## Purposes and legal bases
+
+Subject to applicable law, requested account/services and purchase validation rely on performing the service contract; security/abuse prevention relies on legitimate interests. Optional cloud processing revealing health information requires explicit purpose-specific consent in addition to an applicable general legal basis. Support processes what is needed to respond and protect the account.
+
+These bases do not remove your rights. The [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) provides general bases and additional conditions for health-related data.
+
+## Retention and deletion
+
+Local records remain until deleted. Exports remain where you saved/shared them. Online account deletion does not erase your local workout database.
+
+Account, purchase metadata, sync and online backup data are kept to provide the services you use. Account deletion removes your account and cloud training/body records and deletes backups or initiates any remaining storage cleanup. If cleanup cannot be confirmed immediately, Kraft reports the limitation and retries. It is not a promise that every security, purchase or deletion record disappears immediately.
+
+Encrypted Apple authorization material and minimal identifiers may survive account deletion to finish revocation or resolve an interrupted authorization safely. Verified revocation clears sensitive grant fields. Unknown attempts are not marked successful by age alone. Unresolved authorization/revocation/deletion cases are reviewed weekly to pursue completion and remove material no longer needed; weekly review is not a promise that Apple or another provider will resolve a case within a week. Minimal deletion guards/opaque receipts prevent unsafe retries; they do not continue operating your deleted training account.
+
+Encrypted Google refresh handles are removed with the Kraft account. Resolved support correspondence is retained for 12 months after resolution. Necessary legal/security exceptions are documented and reviewed, not a reason to keep every support case indefinitely. Other independent store transaction records, provider backup copies and security logs follow their applicable necessary purposes/retention requirements. Residual backups can outlast deletion from active systems; we do not promise immediate erasure from every independent provider. Kraft minimizes retained operational data rather than keeping unnecessary payloads by default.
+
+Kraft attempts to clear a deleted account's local backup key on that device. A cleanup failure, another device, OS keychain copy or written recovery code can remain. Manage your external recovery codes/exports separately.
+
+## Delete your account and data
 {: #delete-your-account-and-data}
 
-- **In the app:** Settings → Account → **Delete account**. This permanently removes your account data, sync rows and stored backups from our systems.
-- **By e-mail:** send a deletion request to **support@kraftlift.com** from any address — you do not need the app installed. We will delete the data associated with your account and confirm.
-- **On-device data** can be deleted anytime via Settings → "Clear all data", or by uninstalling the app.
+Use Settings → Account → Delete account, or request deletion at support@kraftlift.com without the app. Proportionate account-ownership verification may be required; never send a password or recovery code.
 
-## 8. Your rights
+Deleting your account does **not** cancel App Store/Google Play billing. Cancel with the store separately. Settings → Clear all data removes local records; cloud and exported copies are separate.
 
-Under the GDPR you have the right to: access your personal data and obtain a copy of it; rectification of inaccurate data; erasure; restriction of processing; data portability — receiving the data you provided in a structured, commonly used, machine-readable format (the in-app export covers your training data); and to withdraw any consent at any time, without affecting the lawfulness of processing carried out before withdrawal.
+## Rights and questions
 
-**Right to object.** Where we process data based on legitimate interest (security logs, section 3), you have the right to object at any time on grounds relating to your particular situation (Art. 21 GDPR) by contacting us at the address above.
+Where applicable, request access, correction, deletion, restriction, portability or processing/safeguard information. You may withdraw consent or object to legitimate-interest processing on grounds relating to your situation. Email support@kraftlift.com. Local training export is not a complete export of provider/account metadata.
 
-To exercise any of these rights, contact support@kraftlift.com. You also have the right to complain to a supervisory authority — in Norway, **Datatilsynet** (www.datatilsynet.no).
+You may complain to your supervisory authority; in Norway, [Datatilsynet](https://www.datatilsynet.no/).
 
-## 9. Children
+## Children and young people
 
-Kraft is not directed at children. We do not knowingly process personal data of children below the age required to consent to information society services in their country (13 in Norway; between 13 and 16 elsewhere in the EEA). If you believe a child below that age has created an account, contact us and we will delete the data.
+Kraft is a general fitness tracker, not a service specifically directed at children. The app does not currently verify age or provide a parental-consent flow. A store content rating is not confirmation that someone can independently consent to every use of their personal information; applicable requirements depend on the person, processing and jurisdiction.
 
-## 10. Changes to this policy
+If you are concerned about a child's information or want help exercising rights on their behalf, contact support@kraftlift.com. We assess the request and may need proportionate confirmation of authority before disclosing or deleting information. Do not send a child's identity documents, health records or account credentials in an initial email.
 
-If this policy changes, the new version will be published at this address with an updated effective date. Material changes to how optional cloud features process data will be announced in the app.
+Policy changes will carry an effective date. Material changes to optional sensitive-data processing require appropriate notice/consent before that processing begins.
