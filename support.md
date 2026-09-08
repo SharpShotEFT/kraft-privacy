@@ -8,7 +8,7 @@ permalink: /support.html
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 5 September 2026
+**Effective date:** 9 September 2026
 
 Contact **support@kraftlift.com** with your app version, device/OS, reproduction steps and non-sensitive error. Never send passwords, recovery codes, sign-in tokens or raw purchase tokens. Crop unrelated private information from screenshots.
 
@@ -18,19 +18,31 @@ Guidance applies where the installed version offers the described feature. Kraft
 
 ## Accounts
 
-Already using Kraft on Android? Use that same Google account on iPhone. To add another sign-in method, sign into the existing Kraft account and select Connect Apple/Google in Account.
+Google and Apple sign-ins using the same verified email may automatically open the same Kraft account. Account → Sign-in methods shows the provider identities saved on that account; a Gmail address alone does not mean Google is connected.
 
-Hide My Email may create a different account. Matching emails manually does not merge accounts or transfer purchases. If credentials belong to another Kraft account, contact support; do not delete an account as a workaround. Linking does not automatically enable sync.
+If emails differ or you use Apple's Hide My Email, sign into your existing Kraft account first, expand Sign-in methods in Account, and connect the other method before switching. When moving from Apple on iPhone to Android, connect Google from that account on iPhone first. Matching emails manually does not merge separate accounts or transfer purchases. If credentials belong to another Kraft account, contact support; do not delete an account as a workaround. Connecting sign-in methods does not enable sync or link an existing standalone Basic purchase.
 
-For interrupted/revoked Apple sign-in, follow the reconnect/clear-unfinished-sign-in instructions and authorize afresh. Local workouts remain available. Do not repeat a purchase to fix sign-in trouble.
+For interrupted/revoked Apple sign-in, follow the specific in-app recovery message. If it tells you to stop retrying, review Sign in with Apple access and contact support before another attempt. Use Clear unfinished sign-in only when offered. Local workouts remain available. Do not repeat a purchase to fix sign-in trouble.
 
 ## Missing Basic/Pro
 
-Sign into the original Kraft account and use Restore purchases while online. If an old Google purchase requests Android restoration, open Kraft on Android with that Kraft account and purchasing Google Play account, restore once, then retry on iPhone.
+In versions with account-free Basic, use Restore purchases while online with the Apple/Google store account that bought Basic; no Kraft login is required. Once verified, Basic remains available offline without a recurring verification deadline. Older installed versions can require a Kraft account until updated.
 
-“Unverified” means access cannot currently be confirmed, not that you should pay again. Previously verified offline access is bounded by proof/entitlement expiry. A new platform's empty store history alone does not erase the other platform's purchase.
+To share Basic across Android and iPhone, sign into the desired Kraft account on the purchasing platform, then choose Account → Basic purchases → Link Basic purchase and confirm. This shares account and purchase information with Kraft, without uploading workouts or enabling sync. On the other platform, sign into that same Kraft account. Basic bought while already signed in attempts this link automatically; a linking failure preserves local access and can be retried from Account. If no verified local Basic purchase is detected, the section offers Restore purchases first. Developer tier simulation creates no store purchase to link.
+
+For Pro or an already linked Basic purchase, sign into the original Kraft account and use Restore purchases while online. If an old Google purchase requests Android restoration, open Kraft on Android with that Kraft account and purchasing Google Play account, restore once, then retry on iPhone.
+
+"Unverified" means access cannot currently be confirmed, not that you should pay again. Previously verified Basic access has no recurring verification deadline; Pro remains bounded by proof/entitlement expiry. A failed store query does not erase a known Basic purchase, and a new platform's empty store history alone does not erase the other platform's purchase.
 
 Refunded/revoked Basic and expired Pro do not grant current access. Pending/Ask to Buy may require store approval. Purchases do not automatically move between Kraft accounts; automatic Apple rebinding after deleting/recreating an account is unsupported. Contact support before irreversible account changes.
+
+## Share a routine
+
+Where available, use Tools → Routine sharing → Export routine, or Share routine from a routine's menu. Exporting and adding a received routine require Basic or active Pro; anyone can preview a received file for free. No Kraft account is needed for the local file flow.
+
+Choose whether to include target weights; they are off by default. Routine notes and custom exercise instructions are included, so review them before sharing. iPhone uses Send or save file and the system share sheet's Save to Files option. Android offers Send file or Save to Device. Send the `.kraft.json` file through an app you choose, then have the recipient use Tools → Routine sharing → Import routine, preview it, and choose Add to my routines. Opening an attachment directly into Kraft is not supported in this version.
+
+Import adds a new routine on Home without replacing existing routines or workout history. Unknown exercises are identified in the preview and can be added as custom exercises. A full backup cannot be imported as a shared routine. Files are readable, not encrypted; they contain routine templates, not completed workout history, body measurements or a transferable Basic purchase. Creating/importing the file works locally, while the selected Files or messaging provider may need a connection. Existing Pro sync can synchronize an imported routine if you already enabled it; file sharing does not turn sync on.
 
 ## Cancel Pro
 

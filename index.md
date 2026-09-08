@@ -8,7 +8,7 @@ permalink: /
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 5 September 2026
+**Effective date:** 9 September 2026
 
 **Data controller:** Odin Skjærvik, Norway
 
@@ -16,7 +16,7 @@ permalink: /
 
 This policy covers Kraft's available Android app and describes the iOS 1.3 release being prepared. Apple-specific features below apply when using a version that offers them; this policy does not announce iOS availability. Features and sign-in options can differ by installed version and platform.
 
-Kraft is local-first. You can record workouts without an account. Signing in is needed for paid-upgrade verification and optional cloud features; signing in alone does not enable workout sync or upload a training backup.
+Kraft is local-first. In versions with account-free Basic, Free and Basic work without a Kraft account. Basic is verified by the device's store and works offline after purchase. A Kraft account is optional for linking Basic across Android and iPhone, and required for Pro and cloud features. Signing in alone does not enable workout sync, upload a training backup or link an older standalone Basic purchase. Older installed versions can still require a Kraft account for Basic until updated.
 
 ## Your device and exports
 
@@ -24,7 +24,11 @@ Kraft stores exercises, routines, workout sets, dates, notes, personal records, 
 
 Rest alerts are scheduled locally, without uploading your workout schedule to a push-notification server. This release does not use HealthKit or read Apple Health data.
 
-CSV and local backup files you export are not encrypted by Kraft. Your chosen Files/share destination handles its copy under its own rules. Those copies are separate from account deletion.
+CSV, local backup and routine-sharing files you export are not encrypted by Kraft. Your chosen Files/share destination handles its copy under its own rules. Those copies are separate from account deletion.
+
+In versions with routine sharing, a routine file contains its name, exercise definitions/instructions, planned sets/reps, supersets and routine exercise notes. Target weights are optional and off by default. The export does not automatically include workout history, personal records, body measurements, account/session information or purchase proof. Review notes and instructions before sharing: text you entered can still contain personal information.
+
+Kraft creates, previews and imports these files locally, without uploading the file to a Kraft sharing service. Your chosen file provider or messaging app may use a network or keep its own copy. An imported routine becomes a normal local record; if you already enabled Pro sync, that existing consent also applies to the imported routine. Sharing does not enable sync or backup.
 
 Kraft's iOS database is configured to be excluded from automatic operating-system backups. Keep your own deliberate export or encrypted online backup for recovery. This does not control files you export to another app/provider.
 
@@ -36,15 +40,17 @@ Apple and Google operate their sign-in services under their policies. Kraft rece
 
 The backend exchanges Apple's short-lived code and keeps an encrypted Apple refresh credential to revoke Kraft's authorization during account deletion. Durable grant storage does not retain the authorization code, raw nonce or identity token. This credential is separate from your Supabase session and backup recovery key.
 
-Continue using your existing Kraft account to keep its data/purchases together. You can deliberately connect another provider from that account. Supabase may associate identities under its verified-email provider policy; Kraft does not merge two separate accounts or transfer purchases just because you enter matching emails. An Apple relay address may create a different account. Credentials already linked to another Kraft account cannot simply be moved by the app.
+Google and Apple sign-ins using the same verified email may automatically open the same Kraft account through Supabase's identity-linking policy. If emails differ or you use Apple's Hide My Email, open your existing Kraft account and connect the other method in Account before switching. Kraft does not merge two separate accounts or transfer purchases just because you enter matching emails. An Apple relay address may create a different account. Credentials already linked to another Kraft account cannot simply be moved by the app.
 
 ## Purchases
 
-Apple App Store or Google Play processes payments; Kraft does not receive your card number. Account-linked evidence validates Basic/Pro, supports restoration and prevents unauthorized sharing across Android/iOS.
+Apple App Store or Google Play processes payments; Kraft does not receive your card number. A standalone Basic purchase is verified through the store on your device, without sending its purchase proof to Kraft's verification service. Its verified unlock is kept locally for offline use. Store payment and restoration still involve the store's data processing.
 
-The verification service processes product and transaction identifiers, store environment, renewal/expiry/refund status and verification times. It stores necessary entitlement/ownership records. Google purchase tokens are bound by one-way hashes and, after successful verification for cross-device refresh, stored as encrypted server-only credentials. This server-side Google handling can apply to existing Android installations when they verify a purchase; it is not limited to the future iOS release. Apple purchases use a server-issued account token and verified transaction identifiers in versions offering Apple billing.
+You can choose Link Basic purchase in Account to share a previously purchased Basic upgrade across Android/iOS. Buying Basic while signed into Kraft also attempts account linking, as disclosed before checkout. Linking shares account and purchase information with Kraft, not workout records, and does not enable backup or sync. Linking failure does not remove a verified local Basic unlock. Pro requires account-linked backend verification.
 
-Credential encryption keys are held separately on the server; this is not end-to-end encryption. The same Kraft account can use verified access on either platform. Local cached proof is account-scoped/time-limited, not a transferable receipt. Apple/Google may retain their payment records after Kraft account deletion.
+The verification service processes product and transaction identifiers, store environment, renewal/expiry/refund status and verification times. It stores necessary entitlement/ownership records. Google purchase tokens are bound by one-way hashes and, after successful verification for cross-device refresh, stored as encrypted server-only credentials. This server-side Google handling can apply to existing Android installations when they verify a purchase; it is not limited to the future iOS release. In versions offering Apple billing, Pro purchases use a server-issued account token; optional Basic linking and Pro verification use verified transaction identifiers. Standalone Basic does not require that account token.
+
+Credential encryption keys are held separately on the server; this is not end-to-end encryption. The same Kraft account can use linked access on either platform. Basic ownership is retained locally without a recurring verification deadline; confirmed refunds or revocations can remove the corresponding unlock. Cached Pro access remains account-scoped and time-limited. A locally retained unlock is not a transferable receipt. Apple/Google may retain their payment records after Kraft account deletion.
 
 ## Optional backup and sync
 
@@ -71,7 +77,7 @@ Kraft has no ads, does not sell personal information and does not use training/b
 
 Providers may process identifiers, IP/network information and service-usage/security data. Google's packaged iOS sign-in SDK declares linked name, email, phone, approximate location, user/device identifiers, other usage and other data, with functionality/analytics purposes depending on the category. This does not mean Kraft asks you for every field or reads precise GPS; it identifies provider practices that also matter. [Google sign-in disclosure](https://developers.google.com/identity/sign-in/ios/app-privacy).
 
-Sentry's library is included but is not configured to send crash reports in this release. Future activation requires updated disclosures and working controls. Kraft does not claim every packaged SDK is analytics-free.
+Sentry's library is included but is not configured to send crash reports in the current release settings. Crash reporting defaults off and requires an explicit on-device opt-in even if an endpoint is configured later. Settings can withdraw that opt-in; diagnostics are never required for Basic. Native crash queues, automatic session tracking, performance tracing and logs are disabled. Future activation still requires accurate disclosures and working controls. Kraft does not claim every packaged SDK is analytics-free.
 
 Technical logs and minimal operational records support security, reliability, verification and deletion completion. Application code avoids logging recovery keys, raw purchase credentials, signed purchase payloads or training records.
 
