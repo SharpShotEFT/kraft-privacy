@@ -8,21 +8,21 @@ permalink: /
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 9 September 2026
+**Effective date:** 10 September 2026
 
 **Data controller:** Odin Skjærvik, Norway
 
 **Contact:** support@kraftlift.com
 
-This policy covers Kraft's available Android app and describes the iOS 1.3 release being prepared. Apple-specific features below apply when using a version that offers them; this policy does not announce iOS availability. Features and sign-in options can differ by installed version and platform.
+This policy covers Kraft's available Android app and describes the Android/iOS 1.4 release being prepared. Feed and Apple-specific features below apply when using a version that offers them; this policy does not announce public iOS availability. Features and sign-in options can differ by installed version and platform.
 
-Kraft is local-first. In versions with account-free Basic, Free and Basic work without a Kraft account. Basic is verified by the device's store and works offline after purchase. A Kraft account is optional for linking Basic across Android and iPhone, and required for Pro and cloud features. Signing in alone does not enable workout sync, upload a training backup or link an older standalone Basic purchase. Older installed versions can still require a Kraft account for Basic until updated.
+Kraft is local-first. In versions with account-free Basic, Free and Basic work without a Kraft account. Basic is verified by the device's store and works offline after purchase. A Kraft account is optional for linking Basic across Android and iPhone, and required for Pro and cloud features. Signing in alone does not enable workout sync, upload a training backup, create a Feed profile, publish workouts or link an older standalone Basic purchase. Older installed versions can still require a Kraft account for Basic until updated.
 
 ## Your device and exports
 
 Kraft stores exercises, routines, workout sets, dates, notes, personal records, body measurements and settings in its local database. Measurements can include weight, body fat and circumferences. Some training/body information may reveal health information.
 
-Rest alerts are scheduled locally, without uploading your workout schedule to a push-notification server. This release does not use HealthKit or read Apple Health data.
+Rest alerts are scheduled locally, without uploading your workout schedule to a push-notification server. Optional Feed push notifications are a separate feature described below. This release does not use HealthKit or read Apple Health data.
 
 CSV, local backup and routine-sharing files you export are not encrypted by Kraft. Your chosen Files/share destination handles its copy under its own rules. Those copies are separate from account deletion.
 
@@ -62,14 +62,33 @@ The key is account-scoped in protected device credential storage. Ordinary sign-
 
 **Consent/withdrawal:** decline an upload and keep using local tracking. Approval authorizes that upload, not automatic future backup or sync. To stop future backups, do not upload again; turn sync off in Account to stop future sync from that device. Signing out turns sync off and requires fresh enablement after signing in. Signing out or disabling sync does not delete existing cloud data. Use Account → Delete account or contact support@kraftlift.com for cloud-data deletion. Withdrawal does not make prior lawful processing unlawful.
 
+## Optional private Feed
+
+Feed is an optional space for sharing chosen completed workouts with mutual friends. Current Pro is needed for friends' posts and new social actions. Kraft retains an account-scoped record of previously verified Pro access so you can manage your own social content after Pro expires. That record is separate from choosing to create a social profile.
+
+Before participating, choose a display name and accept the community rules. A profile picture is optional and selected using your device's photo picker; Kraft uploads the selected, resized picture, not your photo library. Your account email or sign-in name is not automatically used as your social identity. Kraft stores your Feed profile, preferences, friendships, invitations/requests, blocks, shared workout snapshots, comments, reactions, activity and reports to operate this feature.
+
+Posting sends the selected workout snapshot, workout date, title, description and sharing settings to Kraft's Supabase backend. The snapshot is separate from private History and does not silently change when History is edited or deleted. Shared summary fields include duration, completed exercises/sets and weight moved. Exercises, reps and weights are uploaded only when you choose Include workout details. Turning details off later removes them from the stored post; share again from History to include them in a new post. Private workout/exercise notes, custom exercise instructions, body measurements and unrelated workouts are excluded from Feed snapshots; text you deliberately enter in a title, description or comment can still contain personal or health information. Review it before posting.
+
+Feed data is protected in transit and by account/friendship permissions, but it is not end-to-end encrypted: Kraft's service can process it, and authorized moderation can review reported content. Posting does not enable cloud sync or backup, and neither service is required for Feed.
+
+Mutual friends can see your shared posts, including posts from before the friendship began. People who can access a post can see its visible comments/reactions and participant display names/photos. Contextual nonfriend profiles show only the permitted identity and mutual friends, not that person's workouts or private history; there is no global user directory or public workout search. Removing a friend ends mutual access. Blocking also restricts reconnection and hides the blocked person's interactions from you, while copies already seen or saved cannot be recalled.
+
+Friend links contain a random invitation identifier. The messaging service you choose receives the link; Kraft does not upload your contacts. The recipient reviews it in the app and accepts or declines, then the sender confirms the connection. A webpage visit or messaging preview does not accept the link or reveal workouts. Invitations expire after seven days and can be revoked. If a friend saves an allowed workout as a routine, their independent copy remains after the source post is deleted or sharing permission changes.
+
+**Social notifications:** the in-app Activity list does not require notification permission. Feed push alerts require a separate preference and system permission; allowing rest alerts does not enable social alerts. For push, Kraft stores an account-linked device delivery token and sends generic wording, “You have new activity in Friends.”, with minimal activity/post identifiers for opening the app. The notification does not contain a display name, workout statistics or comment text. Friend-post alerts require both the general setting and your selection of that friend. What appears on your lock screen also depends on your device settings. Turn social alerts off in Feed settings or hide Feed to stop future social notifications; a notification already delivered may remain on the device.
+
+**Your controls:** hide Feed from normal Settings, remove friends, block people, report a post/comment/profile, delete your own contributions, or leave Feed. Post owners can also remove comments and reactions from their posts and control new comments. Reports go to a private review queue; the reporter is not disclosed to the reported person. See retention below for the limited moderation evidence kept separately.
+
 ## Providers and locations
 
-- **Supabase:** authentication, entitlements, encrypted backup files, optional sync and backend security. Primary project storage is Stockholm, Sweden; platform logs, support and subprocessors may process data outside the EEA. An EU storage region does not make every operation EU-only.
-- **Cloudflare:** Apple purchase verification/notifications, processing account-token and transaction identifiers, signed subscription evidence and technical request information. Its global infrastructure may process this outside the EEA. Kraft does not send training/body records or backup recovery keys to that verifier.
+- **Supabase:** authentication, entitlements, encrypted backup files, optional sync, Feed profiles/photos/posts/interactions, notification registrations and moderation/security records. Primary project storage is Stockholm, Sweden; platform logs, support and subprocessors may process data outside the EEA. An EU storage region does not make every operation EU-only.
+- **Cloudflare:** Apple purchase verification/notifications, processing account-token and transaction identifiers, signed subscription evidence and technical request information. A separate invitation service serves the app-opening page and receives its requested URL and technical connection information. It does not look up workouts or accept invitations. Cloudflare's global infrastructure may process data outside the EEA. Kraft does not send training/body records or backup recovery keys to the Apple purchase verifier.
+- **Expo, Apple and Google notification delivery:** when you enable Feed push notifications, Expo routes the notification through Apple's APNs or Google's Firebase Cloud Messaging. These services process the delivery identifier, technical routing information and the minimal notification payload. They do not receive your full workout or comment text through this feature.
 - **Apple/Google:** the sign-in/store service you use, under its applicable terms/privacy rules.
 - **Support email:** a monitored Gmail mailbox handles information you voluntarily send to answer a request and verify account access. Google processes that correspondence under its applicable service/privacy terms. Do not send passwords, recovery codes, sign-in credentials or full sensitive training exports.
 
-Applicable processor agreements and transfer safeguards govern provider processing. Contact us for information about safeguards relevant to your data. See [Supabase DPA](https://supabase.com/legal/customer-resources/data-processing-addendum), [Cloudflare DPA](https://www.cloudflare.com/cloudflare-customer-dpa/), [Apple Privacy](https://www.apple.com/legal/privacy/) and [Google Privacy](https://policies.google.com/privacy).
+Applicable processor agreements and transfer safeguards govern provider processing. Contact us for information about safeguards relevant to your data. See [Supabase DPA](https://supabase.com/legal/customer-resources/data-processing-addendum), [Cloudflare DPA](https://www.cloudflare.com/cloudflare-customer-dpa/), [Expo Privacy](https://expo.dev/privacy), [Apple Privacy](https://www.apple.com/legal/privacy/) and [Google Privacy](https://policies.google.com/privacy).
 
 ## SDKs, technical information and advertising
 
@@ -83,7 +102,7 @@ Technical logs and minimal operational records support security, reliability, ve
 
 ## Purposes and legal bases
 
-Subject to applicable law, requested account/services and purchase validation rely on performing the service contract; security/abuse prevention relies on legitimate interests. Optional cloud processing revealing health information requires explicit purpose-specific consent in addition to an applicable general legal basis. Support processes what is needed to respond and protect the account.
+Subject to applicable law, requested account/services and purchase validation rely on performing the service contract; security/abuse prevention, including proportionate Feed moderation, relies on legitimate interests. Optional cloud processing revealing health information requires explicit purpose-specific consent in addition to an applicable general legal basis. Feed participation and each deliberate publication are separate from sync or backup consent. Support processes what is needed to respond and protect the account.
 
 These bases do not remove your rights. The [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) provides general bases and additional conditions for health-related data.
 
@@ -92,6 +111,12 @@ These bases do not remove your rights. The [GDPR](https://eur-lex.europa.eu/eli/
 Local records remain until deleted. Exports remain where you saved/shared them. Online account deletion does not erase your local workout database.
 
 Account, purchase metadata, sync and online backup data are kept to provide the services you use. Account deletion removes your account and cloud training/body records and deletes backups or initiates any remaining storage cleanup. If cleanup cannot be confirmed immediately, Kraft reports the limitation and retries. It is not a promise that every security, purchase or deletion record disappears immediately.
+
+Feed posts remain until you delete them, leave Feed or delete your Kraft account. Pro expiry and hiding Feed do not delete existing posts; eligible friends can still see and interact with them according to their settings. Leaving Feed removes its profile, posts, comments, reactions and connections. Account deletion also removes those social records. Profile photos are access-controlled and may need a separate storage-cleanup pass; a short-lived link or an already downloaded copy can outlast an access change.
+
+Private moderation reports keep a limited copy of the reported title/description, comment or profile identity, the report reason/context and the review outcome. This evidence is separate from normal Feed content and can remain after a post, social profile or Kraft account is deleted. Reports and activity records become eligible for removal 90 days after creation and are removed by scheduled cleanup. Expired invitation records become eligible after a further 30 days; push-delivery queue records after seven days. Push delivery receipts are deleted after processing or become eligible after 24 hours. These are active-service cleanup rules, not a promise of immediate erasure from every provider backup. Contact support if you need information about a specific retained report.
+
+Leaving Feed does not erase another person's account-level block against you or an operator's social restriction. These limited records prevent leaving and recreating a Feed profile from bypassing safety controls. They remain until the blocking person removes the block, support lifts the restriction, or the relevant Kraft account is deleted. A record of prior Pro access and Feed preferences can also remain with your account after leaving the social feature.
 
 Encrypted Apple authorization material and minimal identifiers may survive account deletion to finish revocation or resolve an interrupted authorization safely. Verified revocation clears sensitive grant fields. Unknown attempts are not marked successful by age alone. Unresolved authorization/revocation/deletion cases are reviewed weekly to pursue completion and remove material no longer needed; weekly review is not a promise that Apple or another provider will resolve a case within a week. Minimal deletion guards/opaque receipts prevent unsafe retries; they do not continue operating your deleted training account.
 
@@ -104,7 +129,9 @@ Kraft attempts to clear a deleted account's local backup key on that device. A c
 
 Use Settings → Account → Delete account, or request deletion at support@kraftlift.com without the app. Proportionate account-ownership verification may be required; never send a password or recovery code.
 
-Deleting your account does **not** cancel App Store/Google Play billing. Cancel with the store separately. Settings → Clear all data removes local records; cloud and exported copies are separate.
+To remove only your social presence, use Feed settings → Leave Feed. A Feed management route remains in normal Settings when Feed is hidden or Pro has expired. Deleting a Feed post or leaving Feed cannot erase independent routines friends already saved, screenshots, or copies handled by another app. A deliberate saved routine becomes the recipient's own local data and follows any sync they separately enabled.
+
+Deleting your account does **not** cancel App Store/Google Play billing. Cancel with the store separately. Settings → Clear all data removes local records; cloud, Feed and exported copies are separate.
 
 ## Rights and questions
 

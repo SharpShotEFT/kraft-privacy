@@ -8,13 +8,13 @@ permalink: /support.html
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 9 September 2026
+**Effective date:** 10 September 2026
 
 Contact **support@kraftlift.com** with your app version, device/OS, reproduction steps and non-sensitive error. Never send passwords, recovery codes, sign-in tokens or raw purchase tokens. Crop unrelated private information from screenshots.
 
 The support mailbox is monitored through Gmail. Resolved support correspondence is retained for 12 months after resolution. Unresolved authorization/revocation/deletion cases are reviewed weekly; this is not a guaranteed response or provider-resolution deadline.
 
-Guidance applies where the installed version offers the described feature. Kraft's iOS 1.3 release is being prepared; the iPhone-specific instructions do not announce its availability. Current Android versions may offer different sign-in options.
+Guidance applies where the installed version offers the described feature. Kraft's Android/iOS 1.4 release is being prepared; these instructions do not announce a public iPhone release. Older versions may have different features or sign-in options.
 
 ## Accounts
 
@@ -44,6 +44,28 @@ Choose whether to include target weights; they are off by default. Routine notes
 
 Import adds a new routine on Home without replacing existing routines or workout history. Unknown exercises are identified in the preview and can be added as custom exercises. A full backup cannot be imported as a shared routine. Files are readable, not encrypted; they contain routine templates, not completed workout history, body measurements or a transferable Basic purchase. Creating/importing the file works locally, while the selected Files or messaging provider may need a connection. Existing Pro sync can synchronize an imported routine if you already enabled it; file sharing does not turn sync on.
 
+## Feed and friends
+
+Feed is optional. Once your Kraft account has verified Pro access, open Feed from Home to choose a separate display name and, optionally, a profile picture. Buying Pro or signing in does not automatically create the profile or share workouts. If Feed is hidden, use normal Settings to restore it or manage your social profile.
+
+Use Share to Feed after completing a workout or from that completed workout in History. Review the title, optional description, summary and sharing settings. Include workout details uploads exercises, reps and weights for friends to see; allowing saving also requires details. Private notes and body measurements are excluded. Turning details off later removes them from the shared snapshot and disables new saves; share again from History if you later want a post with details. Edits or deletion in private History do not change the published snapshot; use the post's menu to edit its text/settings or delete it.
+
+In Friends, create an invitation and select the messaging app in the system share sheet. The recipient needs Kraft, an account, Pro and a display name. They accept the invitation, then the inviter confirms who accepted. Links expire after seven days and can be cancelled; the share sheet closing does not prove delivery. If an app store installation interrupts the flow, reopen the original link afterward. Kraft and Kraft (Dev) use different invitation links. A development invitation cannot connect a production account.
+
+You can also request a connection from a participant's limited profile; the selected recipient accepts that direct request. There is no global people directory. Friends can see earlier shared posts too. Removing a friend ends access in both directions; blocking additionally prevents new in-app connection attempts. Unblocking does not restore friendship.
+
+Save workout as routine adds an independent copy to Home without the author's logged loads. It uses the session shown in the post, which may differ from the author's original planned routine. The copy remains yours if the author removes the post or either subscription changes.
+
+After Pro expires, you can manage your own posts and social profile, remove friends, block/report, remove your past contributions or leave Feed. Renew Pro to browse friends' posts or make new posts/comments/reactions/connections. Your existing posts remain visible to eligible friends until you delete them or leave Feed.
+
+Social push alerts are optional and separate from rest-timer alerts. Use Feed settings to enable them and allow system notifications if requested. Friend-post alerts also require choosing the individual friends you want alerts for. Activity remains available in the app when push is off. Hiding Feed stops future social alerts without deleting shared posts; previously delivered notifications may remain on the device.
+
+## Report a Feed problem
+
+Use Report from a post, comment or profile menu. Select the reason, add only relevant context, and block the person if needed. Reports are sent privately to Kraft's moderation queue and do not identify the reporter to the reported person. Post owners can remove unwanted comments and reactions from their own posts; each person can remove their own contributions.
+
+The community rules prohibit harassment, hate, threats, sexual/exploitative content, spam and sharing someone else's private information without permission. Kraft may remove reported content or restrict social accounts. Leaving and recreating a Feed profile does not clear another person's block or an operator restriction. For urgent moderation concerns or to question a moderation decision, contact support@kraftlift.com with the relevant post/report identifier and concise context. Do not send unrelated workout histories or account credentials. Limited report evidence can remain for the retention period described in the privacy policy after ordinary Feed content is removed.
+
 ## Cancel Pro
 
 Account → Manage Pro subscription follows the store that bills you, even on the other platform.
@@ -64,6 +86,8 @@ Kraft verifies an existing backup's key before replacing it. A wrong code must n
 ## Delete data
 
 Settings → Account → Delete account removes your account, cloud training/body data and backups, subject to any reported queued storage cleanup. Limited purchase/security records and unfinished provider-revocation records may remain for the purposes described in the privacy policy. Email support@kraftlift.com to request deletion without the app or discuss cloud-data deletion; ownership verification may be necessary. Queued storage cleanup and Apple revocation have their own completion states; contact support if a warning persists.
+
+To delete your social presence while keeping Kraft and your private workouts, use Feed settings → Leave Feed. A management route remains in normal Settings when Feed is hidden or Pro has expired. Leaving removes the social profile, posts, comments, reactions and connections; account deletion also removes them. Photo cleanup may finish separately. Friends' already saved routine copies and limited moderation evidence follow the privacy policy rather than disappearing with the original post.
 
 Local workouts remain separate. Settings → Clear all data removes local records. External exports/recovery codes remain under your control. Cancel Pro separately to stop renewal.
 

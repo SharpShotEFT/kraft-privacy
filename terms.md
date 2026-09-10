@@ -8,11 +8,11 @@ permalink: /terms.html
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 9 September 2026
+**Effective date:** 10 September 2026
 
 Kraft is operated by Odin Skjærvik, Norway. Contact **support@kraftlift.com**.
 
-Features depend on the installed version and platform. Kraft's iOS 1.3 release is being prepared; Apple-specific explanations here apply when that version is available and do not announce an App Store launch.
+Features depend on the installed version and platform. Kraft's Android/iOS 1.4 release is being prepared; Feed and Apple-specific explanations apply where offered and do not announce a public App Store launch.
 
 ## License and use
 
@@ -47,6 +47,18 @@ In versions with routine sharing, Basic or active Pro permits exporting routine 
 Save your recovery code. Kraft cannot reconstruct a lost key. Sign-out retains it; account deletion attempts local cleanup but cannot erase codes/files on other devices or destinations.
 
 These explanations promise neither uninterrupted service nor loss-proof backup. They do not exclude non-waivable consumer or privacy rights. The [privacy policy](./) describes processors, retention, withdrawal and deletion. Store content ratings do not replace applicable consent or contract-capacity requirements.
+
+## Optional Feed and community rules
+
+Feed is an optional service for sharing selected workouts with mutual friends. Participation requires a separate display name and acceptance of these community rules. Current Pro is required for browsing friends' posts and new social activity. Once Pro has been verified for an account, own-content management, removal, blocking/reporting and leaving Feed remain available after expiry. Existing posts remain visible to eligible friends until deleted or the owner leaves Feed. Hiding Feed changes visibility and notification preferences; it does not delete existing posts or cancel billing.
+
+Share only content you have the right to use. Do not post harassment, hate, bullying, threats, sexually explicit or exploitative material, spam, scams, or someone else's private information without permission. Do not impersonate another person, evade a block or social restriction, or encourage dangerous conduct. These rules cover profile names/pictures, post text and comments as well as workout content.
+
+By deliberately posting, you ask Kraft to store and display that content to the permitted audience and process it to operate the requested service and moderation. New friends can see older shared posts. Workout-detail and saving controls determine what friends can see or import; an allowed save creates the recipient's independent routine without the logged loads. Later deletion, friendship removal or changed permission cannot recall saved copies, screenshots or content already received elsewhere. Private History edits do not automatically rewrite a published snapshot.
+
+Report objectionable posts, comments or profiles from their menus and block unwanted contacts. Kraft maintains a private moderation queue and may remove content or restrict a social account when these rules are breached. Leaving and recreating a Feed profile does not remove another person's block or an operator restriction. Filtering and reports do not guarantee that every objectionable item is prevented. Contact support@kraftlift.com for moderation concerns or to question a decision. Report evidence and outcomes have limited separate retention as described in the privacy policy; reporter identity is not shared with the reported person.
+
+Using Feed does not require enabling workout sync or online backup. Feed is not end-to-end encrypted. A post author is responsible for reviewing titles, descriptions and any other text they choose to share. The [privacy policy](./) explains social profiles, invitations, notifications, data access, retention and deletion.
 
 ## Support and changes
 
