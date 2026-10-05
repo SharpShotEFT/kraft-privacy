@@ -8,7 +8,7 @@ permalink: /
 
 [Privacy](./) · [Support](./support.html) · [Terms](./terms.html)
 
-**Effective date:** 10 September 2026
+**Effective date:** 5 October 2026
 
 **Data controller:** Odin Skjærvik, Norway
 
@@ -80,9 +80,22 @@ Friend links contain a random invitation identifier. The messaging service you c
 
 **Your controls:** hide Feed from normal Settings, remove friends, block people, report a post/comment/profile, delete your own contributions, or leave Feed. Post owners can also remove comments and reactions from their posts and control new comments. Reports go to a private review queue; the reporter is not disclosed to the reported person. See retention below for the limited moderation evidence kept separately.
 
+## In-app feedback
+
+When the app offers Send feedback, you can send a bug report, suggestion, question or other message to Kraft. In anonymous mode, the app sends the selected subject, message and anonymous-mode flag without attaching contact email, device/app context or a session token. In both modes, the service processes your IP address to prevent abuse and stores a salted hash of it with rate-limit counters and window information. Scheduled maintenance removes rate-limit records whose window start is more than two days old. These records are separate from account-linked feedback and are not removed by account deletion.
+
+In non-anonymous mode, the app automatically attaches available app version, build and variant; platform and operating-system details; Android API level; manufacturer, brand and model; memory; emulator status; screen dimensions, pixel ratio and font scale; locale and time zone; sign-in, Pro and cloud-sync status; and the screen where feedback was opened. Contact email is optional and may be prefilled from your account; you can change or clear it before sending.
+
+When you send non-anonymous feedback while signed in, the app sends your Supabase session access token for authentication, and Kraft stores your account ID with the submission. Clearing the optional contact email does not remove this account association. The access token is not stored in the feedback table or included in the Jira ticket.
+
+Kraft does not automatically attach workout records to feedback. Information you include in the message is stored and forwarded to Jira, including any personal or training information you choose to write. Anonymous mode does not remove identifying information from your message.
+
+Feedback is stored by Kraft in Supabase and forwarded to Jira, a ticketing service provided by Atlassian, for support and triage. Kraft stores a generated record ID and feedback reference, submission time, anonymity choice and forwarding status, attempt count and error code, plus the Jira ticket identifier and forwarding time when available. Operational failure logs may contain the feedback reference.
+
 ## Providers and locations
 
-- **Supabase:** authentication, entitlements, encrypted backup files, optional sync, Feed profiles/photos/posts/interactions, notification registrations and moderation/security records. Primary project storage is Stockholm, Sweden; platform logs, support and subprocessors may process data outside the EEA. An EU storage region does not make every operation EU-only.
+- **Supabase:** authentication, entitlements, encrypted backup files, optional sync, in-app feedback, Feed profiles/photos/posts/interactions, notification registrations and moderation/security records. Primary project storage is Stockholm, Sweden; platform logs, support and subprocessors may process data outside the EEA. An EU storage region does not make every operation EU-only.
+- **Atlassian (Jira):** receives the feedback subject, message and reference, with any attached contact email and device/app context, for support and triage. Account deletion and Supabase retention cleanup do not delete Jira copies. You can request separate deletion by emailing support@kraftlift.com with the feedback reference.
 - **Cloudflare:** Apple purchase verification/notifications, processing account-token and transaction identifiers, signed subscription evidence and technical request information. A separate invitation service serves the app-opening page and receives its requested URL and technical connection information. It does not look up workouts or accept invitations. Cloudflare's global infrastructure may process data outside the EEA. Kraft does not send training/body records or backup recovery keys to the Apple purchase verifier.
 - **Expo, Apple and Google notification delivery:** when you enable Feed push notifications, Expo routes the notification through Apple's APNs or Google's Firebase Cloud Messaging. These services process the delivery identifier, technical routing information and the minimal notification payload. They do not receive your full workout or comment text through this feature.
 - **Apple/Google:** the sign-in/store service you use, under its applicable terms/privacy rules.
@@ -102,7 +115,7 @@ Technical logs and minimal operational records support security, reliability, ve
 
 ## Purposes and legal bases
 
-Subject to applicable law, requested account/services and purchase validation rely on performing the service contract; security/abuse prevention, including proportionate Feed moderation, relies on legitimate interests. Optional cloud processing revealing health information requires explicit purpose-specific consent in addition to an applicable general legal basis. Feed participation and each deliberate publication are separate from sync or backup consent. Support processes what is needed to respond and protect the account.
+Subject to applicable law, requested account/services and purchase validation rely on performing the service contract; security/abuse prevention, including proportionate Feed moderation, relies on legitimate interests. Optional cloud processing revealing health information requires explicit purpose-specific consent in addition to an applicable general legal basis. Feed participation and each deliberate publication are separate from sync or backup consent. Support and in-app feedback process what is needed to respond, investigate reported issues and protect the account.
 
 These bases do not remove your rights. The [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) provides general bases and additional conditions for health-related data.
 
@@ -117,6 +130,8 @@ Feed posts remain until you delete them, leave Feed or delete your Kraft account
 Private moderation reports keep a limited copy of the reported title/description, comment or profile identity, the report reason/context and the review outcome. This evidence is separate from normal Feed content and can remain after a post, social profile or Kraft account is deleted. Reports and activity records become eligible for removal 90 days after creation and are removed by scheduled cleanup. Expired invitation records become eligible after a further 30 days; push-delivery queue records after seven days. Push delivery receipts are deleted after processing or become eligible after 24 hours. These are active-service cleanup rules, not a promise of immediate erasure from every provider backup. Contact support if you need information about a specific retained report.
 
 Leaving Feed does not erase another person's account-level block against you or an operator's social restriction. These limited records prevent leaving and recreating a Feed profile from bypassing safety controls. They remain until the blocking person removes the block, support lifts the restriction, or the relevant Kraft account is deleted. A record of prior Pro access and Feed preferences can also remain with your account after leaving the social feature.
+
+Kraft applies a 24-month retention period to feedback stored in Supabase. Records older than 24 months are removed by the next successful scheduled cleanup. Account-linked feedback is removed earlier when the associated account is deleted.
 
 Encrypted Apple authorization material and minimal identifiers may survive account deletion to finish revocation or resolve an interrupted authorization safely. Verified revocation clears sensitive grant fields. Unknown attempts are not marked successful by age alone. Unresolved authorization/revocation/deletion cases are reviewed weekly to pursue completion and remove material no longer needed; weekly review is not a promise that Apple or another provider will resolve a case within a week. Minimal deletion guards/opaque receipts prevent unsafe retries; they do not continue operating your deleted training account.
 
