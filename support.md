@@ -14,7 +14,7 @@ Contact **support@kraftlift.com** with your app version, device/OS, reproduction
 
 The support mailbox is monitored through Gmail. Resolved support correspondence is retained for 12 months after resolution. Unresolved authorization/revocation/deletion cases are reviewed weekly; this is not a guaranteed response or provider-resolution deadline.
 
-Guidance applies where the installed version offers the described feature. Kraft's Android/iOS 1.4 release is being prepared; these instructions do not announce a public iPhone release. Older versions may have different features or sign-in options.
+Guidance applies where the installed version offers the described feature. Older versions may have different features or sign-in options.
 
 ## Accounts
 

@@ -14,7 +14,7 @@ permalink: /
 
 **Contact:** support@kraftlift.com
 
-This policy covers Kraft's available Android app and describes the Android/iOS 1.4 release being prepared. Feed and Apple-specific features below apply when using a version that offers them; this policy does not announce public iOS availability. Features and sign-in options can differ by installed version and platform.
+This policy covers the Kraft app on Android and iOS. Some features, such as Feed and Apple-specific purchases, apply only on versions and platforms that offer them, and features and sign-in options can differ by installed version and platform.
 
 Kraft is local-first. In versions with account-free Basic, Free and Basic work without a Kraft account. Basic is verified by the device's store and works offline after purchase. A Kraft account is optional for linking Basic across Android and iPhone, and required for Pro and cloud features. Signing in alone does not enable workout sync, upload a training backup, create a Feed profile, publish workouts or link an older standalone Basic purchase. Older installed versions can still require a Kraft account for Basic until updated.
 

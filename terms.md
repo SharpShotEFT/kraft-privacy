@@ -12,7 +12,7 @@ permalink: /terms.html
 
 Kraft is operated by Odin Skjærvik, Norway. Contact **support@kraftlift.com**.
 
-Features depend on the installed version and platform. Kraft's Android/iOS 1.4 release is being prepared; Feed and Apple-specific explanations apply where offered and do not announce a public App Store launch.
+Features depend on the installed version and platform. Feed and Apple-specific explanations apply only where the installed version offers them.
 
 ## License and use
 
